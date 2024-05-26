@@ -10,10 +10,10 @@ void main(List<String> args) async {
       displayBytes(fileName);
       break;
     case "-l":
-      displayNumberOfLines(fileName);
+      displayLineCount(fileName);
       break;
     case "-w":
-      displayNumberOfWords(fileName);
+      displayWordCount(fileName);
     default:
       print("flag unsupported");
   }
@@ -26,7 +26,7 @@ void displayBytes(String fileName) async {
   print("${bytes.length} $fileName");
 }
 
-void displayNumberOfLines(String fileName) async {
+void displayLineCount(String fileName) async {
   final file = File("lib/data/$fileName");
   final lines = await file.readAsLines();
   int lineCount = 0;
@@ -36,7 +36,7 @@ void displayNumberOfLines(String fileName) async {
   print("$lineCount $fileName");
 }
 
-void displayNumberOfWords(String fileName) async {
+void displayWordCount(String fileName) async {
   int wordCount = 0;
   final file = File("lib/data/$fileName");
   List<String> lines = await file.readAsLines();
