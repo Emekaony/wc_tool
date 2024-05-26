@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 void main() {
-  print("hello world");
+  print(utf8.encode("emeka").lengthInBytes);
 }
