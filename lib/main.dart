@@ -8,6 +8,10 @@ void main(List<String> args) async {
   switch (flag) {
     case '-c':
       displayBytes(fileName);
+      break;
+    case '-l':
+      displayNumberOfLines(fileName);
+      break;
     default:
       print("flag unsupported");
   }
@@ -18,4 +22,14 @@ void displayBytes(String fileName) async {
   final file = File("lib/data/$fileName");
   final bytes = await file.readAsBytes();
   print("${bytes.length} $fileName");
+}
+
+void displayNumberOfLines(String fileName) async {
+  final file = File("lib/data/$fileName");
+  final lines = await file.readAsLines();
+  int lineCount = 0;
+  for (String _ in lines) {
+    lineCount++;
+  }
+  print("$lineCount $fileName");
 }
