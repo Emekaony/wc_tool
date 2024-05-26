@@ -17,5 +17,5 @@ void main(List<String> args) async {
 void displayBytes(String fileName) async {
   final file = File("lib/data/$fileName");
   final bytes = await file.readAsBytes();
-  print("Number of bytes: ${bytes.length}");
+  print("${bytes.length} $fileName");
 }
